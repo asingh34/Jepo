@@ -5,6 +5,7 @@
   Created by Anant Singh on 8/16/22.
   
 */
+//UI words
 "str_hello" = "Hello";
 "str_jep" = "Jeopardy!";
 "str_win" = "You Win!";

@@ -7,4 +7,6 @@
 */
 "str_hello" = "Hello";
 "str_jep" = "Jeopardy!";
+"str_win" = "You Win!";
+"str_lose" = "You Lose!";
 

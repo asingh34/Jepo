@@ -10,6 +10,16 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    static var persistentContainer: NSPersistentContainer {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    }
+    
+    static var cdContext: NSManagedObjectContext {
+        let cdContext = persistentContainer.viewContext
+        cdContext.automaticallyMergesChangesFromParent = true
+        return cdContext
+    }
      
 
 
