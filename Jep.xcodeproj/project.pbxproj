@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1F1D0528B43038009369DA /* jeopardy.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1F1D0428B43038009369DA /* jeopardy.json */; };
 		BEA984D028AC009B00631174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984CF28AC009B00631174 /* AppDelegate.swift */; };
 		BEA984D228AC009B00631174 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984D128AC009B00631174 /* SceneDelegate.swift */; };
 		BEA984D428AC009B00631174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984D328AC009B00631174 /* ViewController.swift */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1F1D0428B43038009369DA /* jeopardy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jeopardy.json; path = ../../../../Downloads/jeopardy.json; sourceTree = "<group>"; };
+		BE1F1D0628B4391C009369DA /* jeopardy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jeopardy.json; sourceTree = "<group>"; };
 		BEA984CC28AC009B00631174 /* Jep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA984CF28AC009B00631174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA984D128AC009B00631174 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +43,6 @@
 		BEA984F328AC50E800631174 /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
 		BEA984F728AC608B00631174 /* QuestionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItem.swift; sourceTree = "<group>"; };
 		BEA984FE28AC754F00631174 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		BEA9850128AD666B00631174 /* jeopardy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = jeopardy.json; path = ../../../Downloads/jeopardy.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +75,8 @@
 		BEA984CE28AC009B00631174 /* Jep */ = {
 			isa = PBXGroup;
 			children = (
+				BE1F1D0428B43038009369DA /* jeopardy.json */,
 				BEA984DD28AC009B00631174 /* LaunchScreen.storyboard */,
-				BEA9850128AD666B00631174 /* jeopardy.json */,
 				BEA984D528AC009B00631174 /* Main.storyboard */,
 				BEA984D328AC009B00631174 /* ViewController.swift */,
 				BEA984CF28AC009B00631174 /* AppDelegate.swift */,
@@ -91,6 +93,7 @@
 		BEA984EE28AC2F6D00631174 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE1F1D0628B4391C009369DA /* jeopardy.json */,
 				BEA984EF28AC2F9700631174 /* QuestionButton.swift */,
 				BEA984F728AC608B00631174 /* QuestionItem.swift */,
 				BEA984F328AC50E800631174 /* QuestionLabel.swift */,
@@ -158,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1F1D0528B43038009369DA /* jeopardy.json in Resources */,
 				BEA984DF28AC009B00631174 /* LaunchScreen.storyboard in Resources */,
 				BEA984E828AC0DBD00631174 /* Localizable.strings in Resources */,
 				BEA984DC28AC009B00631174 /* Assets.xcassets in Resources */,

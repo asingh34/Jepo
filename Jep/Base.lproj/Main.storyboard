@@ -22,25 +22,25 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-Bd-rwW" userLabel="Categories">
                                         <rect key="frame" x="46" y="0.0" width="310" height="20.333333333333332"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-m1-XJt" userLabel="c1_lbl" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-m1-XJt" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xr-2C-w3n" userLabel="c2_lbl" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xr-2C-w3n" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
                                                 <rect key="frame" x="52.333333333333329" y="0.0" width="48.333333333333329" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owf-lN-NUY" userLabel="c3_lbl" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owf-lN-NUY" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
                                                 <rect key="frame" x="104.66666666666664" y="0.0" width="48.333333333333329" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-rB-eyV" userLabel="c4_lbl" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_c4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-rB-eyV" customClass="QuestionLabel" customModule="Jep" customModuleProvider="target">
                                                 <rect key="frame" x="157" y="0.0" width="48.333333333333343" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -70,31 +70,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K14-xH-XU2"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixn-k6-JNh" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Sv-66-w8w"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rO-0AO" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Fs-GV-lIr"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxf-8A-sCu" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqF-V5-piZ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0V-sS-8aw" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YTb-Nh-dYT"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-zZ-hJz" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7S-EI-AbT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -105,31 +123,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qcz-lc-Z37"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIg-dy-vdu" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nay-dI-c5y"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L89-L6-wQe" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A4X-jo-AJR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQf-j8-2k3" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yl8-bJ-hhC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuT-4T-RWJ" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tqd-M1-Fpf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZp-7g-gbf" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVg-bk-yMY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -140,31 +176,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pvf-mj-GEb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efH-VN-8UU" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9C9-N4-f1g"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeQ-wt-cdD" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q35-w9-kQR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-6q-zTg" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOH-LJ-9RQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KL-hX-6gF" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yla-Ev-npx"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2O-6i-8Ck" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="STQ-zB-SoU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -175,31 +229,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktP-bD-vvH"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xph-D8-uay" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jeM-2H-uge"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvy-EP-Zcr" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TiU-bn-L4t"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-vC-OPa" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M2K-1K-8Ts"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-1l-ctN" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H0t-LV-Ru8"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y5-xt-C6B" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QSU-uN-2RO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -210,31 +282,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bW9-f0-zlk"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3k-I4-TEQ" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Lx-N2-Ihu"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-Wv-qVO" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YF7-q4-UKn"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58L-4H-D6Y" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EKX-Yg-0NX"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11C-UE-U0J" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hU-59-nMb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82b-TZ-u9d" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OPS-8k-Qnz"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -245,31 +335,49 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvV-iZ-hPR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzr-8G-CwY" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="32.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NGD-2n-gwU"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-W4-EOG" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-B7-t9k"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBN-c8-mNK" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="96.000000000000014" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7O7-RG-ehq"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbD-Mq-wpg" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jW4-pO-Jyx"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-PX-OzV" customClass="QuestionButton" customModule="Jep" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="160" width="67" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <connections>
+                                                            <action selector="onButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sNF-jF-F5H"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -294,7 +402,48 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outletCollection property="CatLabels" destination="Fff-m1-XJt" collectionClass="NSMutableArray" id="Xfq-3F-LPv"/>
+                        <outletCollection property="QuestionButtons" destination="FKe-v1-3Y8" collectionClass="NSMutableArray" id="tdC-pq-uaX"/>
+                        <outletCollection property="QuestionButtons" destination="ixn-k6-JNh" collectionClass="NSMutableArray" id="a4X-ZW-VPB"/>
+                        <outletCollection property="QuestionButtons" destination="m8j-rO-0AO" collectionClass="NSMutableArray" id="39U-Wb-0nj"/>
+                        <outletCollection property="QuestionButtons" destination="bxf-8A-sCu" collectionClass="NSMutableArray" id="ljH-4s-LyM"/>
+                        <outletCollection property="QuestionButtons" destination="C0V-sS-8aw" collectionClass="NSMutableArray" id="PjQ-yb-Bw4"/>
+                        <outletCollection property="QuestionButtons" destination="iVF-zZ-hJz" collectionClass="NSMutableArray" id="AB4-Wj-knv"/>
+                        <outletCollection property="QuestionButtons" destination="Ty3-ca-lPm" collectionClass="NSMutableArray" id="UUb-sN-evN"/>
+                        <outletCollection property="QuestionButtons" destination="ZIg-dy-vdu" collectionClass="NSMutableArray" id="dQ9-ak-aLc"/>
+                        <outletCollection property="QuestionButtons" destination="L89-L6-wQe" collectionClass="NSMutableArray" id="dCu-5V-cbo"/>
+                        <outletCollection property="QuestionButtons" destination="kQf-j8-2k3" collectionClass="NSMutableArray" id="wFH-eX-FMS"/>
+                        <outletCollection property="QuestionButtons" destination="wuT-4T-RWJ" collectionClass="NSMutableArray" id="cNB-k4-eeV"/>
+                        <outletCollection property="QuestionButtons" destination="VZp-7g-gbf" collectionClass="NSMutableArray" id="lsy-OG-Gfa"/>
+                        <outletCollection property="QuestionButtons" destination="dN8-VR-AKs" collectionClass="NSMutableArray" id="ZPD-Hj-csl"/>
+                        <outletCollection property="QuestionButtons" destination="efH-VN-8UU" collectionClass="NSMutableArray" id="K8O-vc-CP1"/>
+                        <outletCollection property="QuestionButtons" destination="QeQ-wt-cdD" collectionClass="NSMutableArray" id="sid-Jt-9yA"/>
+                        <outletCollection property="QuestionButtons" destination="Mtf-6q-zTg" collectionClass="NSMutableArray" id="Fdl-NR-rBq"/>
+                        <outletCollection property="QuestionButtons" destination="8KL-hX-6gF" collectionClass="NSMutableArray" id="OV9-jK-pZ5"/>
+                        <outletCollection property="QuestionButtons" destination="y2O-6i-8Ck" collectionClass="NSMutableArray" id="bAF-WP-RpS"/>
+                        <outletCollection property="QuestionButtons" destination="VAY-Ol-7Kf" collectionClass="NSMutableArray" id="g1M-by-r3k"/>
+                        <outletCollection property="QuestionButtons" destination="Xph-D8-uay" collectionClass="NSMutableArray" id="1Du-Cg-jjE"/>
+                        <outletCollection property="QuestionButtons" destination="Zvy-EP-Zcr" collectionClass="NSMutableArray" id="ozU-ci-vcH"/>
+                        <outletCollection property="QuestionButtons" destination="1hm-vC-OPa" collectionClass="NSMutableArray" id="cDo-Cl-pSm"/>
+                        <outletCollection property="QuestionButtons" destination="oVp-1l-ctN" collectionClass="NSMutableArray" id="iAW-LO-yUi"/>
+                        <outletCollection property="QuestionButtons" destination="8Y5-xt-C6B" collectionClass="NSMutableArray" id="LQZ-aw-Qg3"/>
+                        <outletCollection property="QuestionButtons" destination="ftg-zj-Q6W" collectionClass="NSMutableArray" id="HOP-x3-3nd"/>
+                        <outletCollection property="QuestionButtons" destination="M3k-I4-TEQ" collectionClass="NSMutableArray" id="nfD-eQ-DWQ"/>
+                        <outletCollection property="QuestionButtons" destination="uQm-Wv-qVO" collectionClass="NSMutableArray" id="qiH-iV-xRK"/>
+                        <outletCollection property="QuestionButtons" destination="58L-4H-D6Y" collectionClass="NSMutableArray" id="P8H-if-iGt"/>
+                        <outletCollection property="QuestionButtons" destination="11C-UE-U0J" collectionClass="NSMutableArray" id="dXu-v6-Twp"/>
+                        <outletCollection property="QuestionButtons" destination="82b-TZ-u9d" collectionClass="NSMutableArray" id="sZP-5k-W1s"/>
+                        <outletCollection property="QuestionButtons" destination="9qV-Bg-YVQ" collectionClass="NSMutableArray" id="fwa-74-lTr"/>
+                        <outletCollection property="QuestionButtons" destination="Nzr-8G-CwY" collectionClass="NSMutableArray" id="pCe-jf-IH2"/>
+                        <outletCollection property="QuestionButtons" destination="9d8-W4-EOG" collectionClass="NSMutableArray" id="aba-Ra-YRa"/>
+                        <outletCollection property="QuestionButtons" destination="NBN-c8-mNK" collectionClass="NSMutableArray" id="pUr-0C-iZj"/>
+                        <outletCollection property="QuestionButtons" destination="xbD-Mq-wpg" collectionClass="NSMutableArray" id="anF-ID-O26"/>
+                        <outletCollection property="QuestionButtons" destination="RP9-PX-OzV" collectionClass="NSMutableArray" id="ri4-bN-xiY"/>
+                        <outletCollection property="Categories" destination="Fff-m1-XJt" collectionClass="NSMutableArray" id="2j4-gm-uXn"/>
+                        <outletCollection property="Categories" destination="2Xr-2C-w3n" collectionClass="NSMutableArray" id="Lng-qc-3ic"/>
+                        <outletCollection property="Categories" destination="Owf-lN-NUY" collectionClass="NSMutableArray" id="0os-WH-GM9"/>
+                        <outletCollection property="Categories" destination="CsH-rB-eyV" collectionClass="NSMutableArray" id="Y4X-eZ-AnJ"/>
+                        <outletCollection property="Categories" destination="efH-DF-sKZ" collectionClass="NSMutableArray" id="ei1-FA-gyv"/>
+                        <outletCollection property="Categories" destination="Kuk-e0-cN5" collectionClass="NSMutableArray" id="uMF-WN-FQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,10 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var CatLabels: [QuestionLabel]!
+    @IBOutlet var Categories: [QuestionLabel]!
     
+    
+    @IBOutlet var QuestionButtons: [QuestionButton]!
+    
+    @IBAction func onButtonTouch(_ sender: QuestionButton) {
+    }
+    
+    let model = Model()
     override func viewDidLoad() {
         super.viewDidLoad()
+        model.initBoard()
+        
         // Do any additional setup after loading the view.
     }
     
