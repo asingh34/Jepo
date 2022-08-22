@@ -18,7 +18,7 @@
 		BEA984F028AC2F9700631174 /* QuestionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984EF28AC2F9700631174 /* QuestionButton.swift */; };
 		BEA984F428AC50E800631174 /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984F328AC50E800631174 /* QuestionLabel.swift */; };
 		BEA984F828AC608B00631174 /* QuestionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984F728AC608B00631174 /* QuestionItem.swift */; };
-		BEA984FD28AC6B7800631174 /* jeopardy.json in Resources */ = {isa = PBXBuildFile; fileRef = BEA984FC28AC6B7800631174 /* jeopardy.json */; };
+		BEA984FF28AC754F00631174 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984FE28AC754F00631174 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,8 @@
 		BEA984F228AC4D2900631174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		BEA984F328AC50E800631174 /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
 		BEA984F728AC608B00631174 /* QuestionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItem.swift; sourceTree = "<group>"; };
-		BEA984FC28AC6B7800631174 /* jeopardy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jeopardy.json; path = ../../../../../Downloads/jeopardy.json; sourceTree = "<group>"; };
+		BEA984FE28AC754F00631174 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BEA9850128AD666B00631174 /* jeopardy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = jeopardy.json; path = ../../../Downloads/jeopardy.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +73,8 @@
 		BEA984CE28AC009B00631174 /* Jep */ = {
 			isa = PBXGroup;
 			children = (
-				BEA984FB28AC6B4500631174 /* Data */,
 				BEA984DD28AC009B00631174 /* LaunchScreen.storyboard */,
+				BEA9850128AD666B00631174 /* jeopardy.json */,
 				BEA984D528AC009B00631174 /* Main.storyboard */,
 				BEA984D328AC009B00631174 /* ViewController.swift */,
 				BEA984CF28AC009B00631174 /* AppDelegate.swift */,
@@ -93,16 +94,9 @@
 				BEA984EF28AC2F9700631174 /* QuestionButton.swift */,
 				BEA984F728AC608B00631174 /* QuestionItem.swift */,
 				BEA984F328AC50E800631174 /* QuestionLabel.swift */,
+				BEA984FE28AC754F00631174 /* Model.swift */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BEA984FB28AC6B4500631174 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				BEA984FC28AC6B7800631174 /* jeopardy.json */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +160,6 @@
 			files = (
 				BEA984DF28AC009B00631174 /* LaunchScreen.storyboard in Resources */,
 				BEA984E828AC0DBD00631174 /* Localizable.strings in Resources */,
-				BEA984FD28AC6B7800631174 /* jeopardy.json in Resources */,
 				BEA984DC28AC009B00631174 /* Assets.xcassets in Resources */,
 				BEA984D728AC009B00631174 /* Main.storyboard in Resources */,
 			);
@@ -186,6 +179,7 @@
 				BEA984D028AC009B00631174 /* AppDelegate.swift in Sources */,
 				BEA984D228AC009B00631174 /* SceneDelegate.swift in Sources */,
 				BEA984DA28AC009B00631174 /* Jep.xcdatamodeld in Sources */,
+				BEA984FF28AC754F00631174 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
