@@ -20,6 +20,13 @@ class ViewController: UIViewController {
     let model = Model()
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in 0..<Categories.count{
+            Categories[i].text = model.load_cat
+        }
+        for (i, items) in Categories.enumerated() {
+            items.ql_index = i
+        }
+
         model.initBoard()
         
         // Do any additional setup after loading the view.

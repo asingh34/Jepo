@@ -13,7 +13,7 @@ import UIKit
 
 class Model{
     
-    
+    let load_cat = NSLocalizedString("str_jep", comment: "")
     var questionArr = [question_item]()
     var qStats: [String: Int] = [:]
     var boardArr=[[question_item]]()
@@ -68,9 +68,6 @@ class Model{
     }
     
     func initBoard(){
-        
-        
-
         questionArr = loadQuestions()
         analyzeData(qarr: questionArr)
         initQuestions()
