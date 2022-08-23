@@ -12,11 +12,14 @@ import UIKit
 class QuestionButton: UIButton {
     
     //Button representation for the Jeopardy Board.
-    var qb_index = 0
+    var qb_row = 0
+    var qb_col = 0
     override func layoutSubviews() {
         super.layoutSubviews()
         titleLabel?.numberOfLines = 0
         titleLabel?.adjustsFontSizeToFitWidth = true
     }
+    
+   
 
 }
