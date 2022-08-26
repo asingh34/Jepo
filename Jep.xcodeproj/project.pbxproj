@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1F1D0528B43038009369DA /* jeopardy.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1F1D0428B43038009369DA /* jeopardy.json */; };
+		BE1F1D0828B58794009369DA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F1D0728B58794009369DA /* QuestionViewController.swift */; };
+		BE1F1D0A28B92872009369DA /* jep.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1F1D0928B92872009369DA /* jep.json */; };
 		BEA984D028AC009B00631174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984CF28AC009B00631174 /* AppDelegate.swift */; };
 		BEA984D228AC009B00631174 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984D128AC009B00631174 /* SceneDelegate.swift */; };
 		BEA984D428AC009B00631174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA984D328AC009B00631174 /* ViewController.swift */; };
@@ -23,8 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE1F1D0428B43038009369DA /* jeopardy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jeopardy.json; path = ../../../../Downloads/jeopardy.json; sourceTree = "<group>"; };
-		BE1F1D0628B4391C009369DA /* jeopardy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jeopardy.json; sourceTree = "<group>"; };
+		BE1F1D0728B58794009369DA /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		BE1F1D0928B92872009369DA /* jep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jep.json; path = ../../../jep.json; sourceTree = "<group>"; };
 		BEA984CC28AC009B00631174 /* Jep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA984CF28AC009B00631174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA984D128AC009B00631174 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +76,10 @@
 		BEA984CE28AC009B00631174 /* Jep */ = {
 			isa = PBXGroup;
 			children = (
-				BE1F1D0428B43038009369DA /* jeopardy.json */,
 				BEA984DD28AC009B00631174 /* LaunchScreen.storyboard */,
 				BEA984D528AC009B00631174 /* Main.storyboard */,
 				BEA984D328AC009B00631174 /* ViewController.swift */,
+				BE1F1D0728B58794009369DA /* QuestionViewController.swift */,
 				BEA984CF28AC009B00631174 /* AppDelegate.swift */,
 				BEA984D128AC009B00631174 /* SceneDelegate.swift */,
 				BEA984EE28AC2F6D00631174 /* Supporting Files */,
@@ -93,7 +94,7 @@
 		BEA984EE28AC2F6D00631174 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE1F1D0628B4391C009369DA /* jeopardy.json */,
+				BE1F1D0928B92872009369DA /* jep.json */,
 				BEA984EF28AC2F9700631174 /* QuestionButton.swift */,
 				BEA984F728AC608B00631174 /* QuestionItem.swift */,
 				BEA984F328AC50E800631174 /* QuestionLabel.swift */,
@@ -161,11 +162,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1F1D0528B43038009369DA /* jeopardy.json in Resources */,
 				BEA984DF28AC009B00631174 /* LaunchScreen.storyboard in Resources */,
 				BEA984E828AC0DBD00631174 /* Localizable.strings in Resources */,
 				BEA984DC28AC009B00631174 /* Assets.xcassets in Resources */,
 				BEA984D728AC009B00631174 /* Main.storyboard in Resources */,
+				BE1F1D0A28B92872009369DA /* jep.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +185,7 @@
 				BEA984D228AC009B00631174 /* SceneDelegate.swift in Sources */,
 				BEA984DA28AC009B00631174 /* Jep.xcdatamodeld in Sources */,
 				BEA984FF28AC754F00631174 /* Model.swift in Sources */,
+				BE1F1D0828B58794009369DA /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +351,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,6 +379,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

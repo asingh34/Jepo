@@ -16,12 +16,14 @@ class Model{
     let load_cat = NSLocalizedString("str_jep", comment: "")
     var questionArr = [question_item]()
     var qStats: [String: Int] = [:]
+    var qaString: [String: String] = [:]
     var boardArr=[[question_item]]()
+    var hardCodeCat: [String] = ["IN THE DICTIONARY","ESPN\'s TOP 10 ALL-TIME ATHLETES","PARTS OF PEACH","X\"s & \"O\"s","RHYMES WITH SMART","BE FRUITFUL & MULTIPLY"]
     
     
     
     func loadQuestions()->[question_item]{
-        let d = readLocalJSONFile(forName: "jeopardy")
+        let d = readLocalJSONFile(forName: "jep")
         let q = parse(jsonData: d)
         return q
         
@@ -63,16 +65,27 @@ class Model{
         }
     }
 
-    func initQuestions(){
-        
+    func initQuestions(qarr: [question_item]?, catArr: [String])->[question_item]{
+        var nqarr = [question_item]()
+        for i in 0..<catArr.count{
+            var catWord = catArr[i]
+            for i in 0..<questionArr.count{
+                    if questionArr[i].category == catWord{
+                    nqarr.append(questionArr[i])
+            }
+        }
     }
+        return nqarr
+    }
+    
     
     func initBoard(){
         questionArr = loadQuestions()
         analyzeData(qarr: questionArr)
-        initQuestions()
-        print(qStats)
-            
-    }
+//        print(qStats)
+//        print("-----------")
+        initQuestions(qarr: questionArr, catArr: hardCodeCat)
+        }
+    
     
 }
