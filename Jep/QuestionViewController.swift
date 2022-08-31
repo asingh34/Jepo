@@ -14,7 +14,7 @@ class QuestionViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DisplayQuestion.text="LETS GO"
     }
     
     
