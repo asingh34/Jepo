@@ -1,6 +1,7 @@
 drop table questions; 
 
 CREATE TABLE questions(
+    id uuid, 
     shownumber text, 
     airdate text,
     round text,
