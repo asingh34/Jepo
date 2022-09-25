@@ -26,6 +26,7 @@ const pool = new Pool({
     })
 }
 */
+
 const getCats = (request, response) => {
     pool.query,('select category, count(*) as count from questions group by category order by count desc limit 5', (error, results) => {
         if (error) {
@@ -36,8 +37,24 @@ const getCats = (request, response) => {
     })
 }
 
+const getId = (request, response) => {
+  pool.query('select id from questions limit 5', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+
+
+
+
+
+
 module.exports = {
 //getFive,
+getId,
 getCats,
 //getQuestions,
 // getUserById,

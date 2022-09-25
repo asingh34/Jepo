@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
 //app.get('/getFive',db.getFive)
 
 app.get('/getCats',db.getCats)
-
+app.get('/getId',db.getId)
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
