@@ -5,14 +5,14 @@ drop table gameboard;
 drop table leaderboard;
 
 CREATE TABLE admin(
-    adminid uuid, 
+    adminid text, 
     name text,
     email text,
     phone text
 );
 
 CREATE TABLE questions(
-    id uuid, 
+    id uuid default uuid_generate_v1() primary key, 
     shownumber text, 
     airdate text,
     round text,
@@ -23,7 +23,7 @@ CREATE TABLE questions(
 ); 
 
 CREATE TABLE users(
-    userid uuid, 
+    userid text, 
     name text,
     email text,
     phone text,
@@ -32,7 +32,7 @@ CREATE TABLE users(
 );
 
 CREATE TABLE gameboard(
-    boardid uuid,
+    boardid text,
     name text,
     datecreated date,
     description text, 
