@@ -12,7 +12,7 @@ CREATE TABLE admin(
 );
 
 CREATE TABLE questions(
-    id uuid default uuid_generate_v1() primary key, 
+    quesid uuid default uuid_generate_v1() primary key, 
     shownumber text, 
     airdate text,
     round text,
@@ -23,7 +23,7 @@ CREATE TABLE questions(
 ); 
 
 CREATE TABLE users(
-    userid text, 
+    userid uuid default uuid_generate_v1() primary key, 
     name text,
     email text,
     phone text,
@@ -32,7 +32,7 @@ CREATE TABLE users(
 );
 
 CREATE TABLE gameboard(
-    boardid text,
+    gbid uuid default uuid_generate_v1() primary key,
     name text,
     datecreated date,
     description text, 
@@ -43,7 +43,7 @@ CREATE TABLE gameboard(
 CREATE TABLE leaderboard(
     rank int,
     wlratio int,
-    userid uuid
+    lbid uuid default uuid_generate_v1() foreign key
 ); 
 
 

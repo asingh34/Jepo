@@ -17,8 +17,6 @@ const getCats = (request, response) => {//list categories with cardinality
     })
 }
 
-
-
 const getUsers = (request, response) => {//get all users
   pool.query('SELECT * FROM users ORDER BY userid ASC', (error, results) => {
     if (error) {
@@ -38,7 +36,6 @@ const getUserById = (request, response) => {//get single user by ID
     response.status(200).json(results.rows)
   })
 }
-
 const createUser = (request, response) => {//create new user
   const { name, email } = request.body
 
@@ -49,7 +46,6 @@ const createUser = (request, response) => {//create new user
     response.status(201).send(`User added with ID: ${results.rows[0].userid}`)
   })
 }
-
 const updateUser = (request, response) => {//update existing user
   const userid = parseInt(request.params.userid)
   const { name, email } = request.body
@@ -65,7 +61,9 @@ const updateUser = (request, response) => {//update existing user
     }
   )
 }
-const deleteUser = (request, response) => {
+
+
+const deleteUser = (request, response) => {//delete user
   const userid = parseInt(request.params.userid)
 
   pool.query('DELETE FROM users WHERE id = $1', [userid], (error, results) => {
@@ -75,13 +73,43 @@ const deleteUser = (request, response) => {
     response.status(200).send(`User deleted with ID: ${userid}`)
   })
 }
+
+const getLb = (request,response) => {//get the global leaderboard
+  pool.query('SELECT * FROM leaderboard ORDER BY rank ASC',(error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+/*const updateLb = (request,response)=>{//update the leaderboard
+  
+}*/
+
+const getTopten = (request,response) => {//get the top ten of the leaderboard
+  pool.query('SELECT userid FROM leaderboard ORDER BY rank desc limit 10',(error,results)=>{
+    if (error){
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+
 module.exports = {
 getCats,
+
 getUsers,
 getUserById,
 createUser,
 updateUser,
 deleteUser,
+
+getLb,
+getTopten,
+
+
 }
 
 
