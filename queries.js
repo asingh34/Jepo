@@ -11,7 +11,6 @@ const getCats = (request, response) => {//list categories with cardinality
     pool.query('select category, count(*) as count from questions group by category order by count desc limit 5', (error, results) => {
         if (error) {
             throw error
-
             }
         response.status(200).json(results.rows)
     })
@@ -25,7 +24,6 @@ const getUsers = (request, response) => {//get all users
     response.status(200).json(results.rows)
   })
 }
-
 const getUserById = (request, response) => {//get single user by ID
   const id = parseInt(request.params.id)
 
@@ -61,8 +59,6 @@ const updateUser = (request, response) => {//update existing user
     }
   )
 }
-
-
 const deleteUser = (request, response) => {//delete user
   const userid = parseInt(request.params.userid)
 
@@ -73,7 +69,6 @@ const deleteUser = (request, response) => {//delete user
     response.status(200).send(`User deleted with ID: ${userid}`)
   })
 }
-
 const getLb = (request,response) => {//get the global leaderboard
   pool.query('SELECT * FROM leaderboard ORDER BY rank ASC',(error, results) => {
     if (error) {
