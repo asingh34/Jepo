@@ -1,0 +1,13 @@
+diff --git a/queries.js b/queries.js
+index 0311316..dfe72e8 100644
+--- a/queries.js
++++ b/queries.js
+@@ -28,7 +28,7 @@ const pool = new Pool({
+ */
+ 
+ const getCats = (request, response) => {
+-    pool.query,('select category, count(*) as count from questions group by category order by count desc limit 5', (error, results) => {
++    pool.query('select category, count(*) as count from questions group by category order by count desc limit 5', (error, results) => {
+         if (error) {
+             throw error
+ 
