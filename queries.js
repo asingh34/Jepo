@@ -7,7 +7,7 @@ const pool = new Pool({
   port: 5432,
 })
 
-const getCats = (request, response) => {//list categories with cardinality
+const getCats = (request, response) => {//list 5 categories with cardinality
     pool.query('select category, count(*) as count from questions group by category order by count desc limit 5', (error, results) => {
         if (error) {
             throw error
