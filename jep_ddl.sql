@@ -1,31 +1,21 @@
-drop table if exists admins;
 drop table if exists users;  
 drop table if exists questions; 
 drop table if exists gameboards; 
-drop table if exists leaderboard;
 
 
-CREATE TABLE admins(
-    admn_id uuid default uuid_generate_v1(), 
-    admn_name text,
-    admn_email text,
-    admn_phone text,
-    primary key(admn_id) 
-);
-
+ 
 CREATE TABLE users(
     usr_id uuid default uuid_generate_v1(), 
     usr_name text,
     usr_email text,
     usr_phone text,
-    wins int,
-    losses int, 
-    primary key (usr_id),
-    constraint fk_admin
-        foreign key(admn_id)
-        references admins(admn_id)
+    usr_wins int,
+    usr_losses int,
+    usr_rank int, 
+    primary key (usr_id)
 );
 
+ 
 CREATE TABLE questions(
     ques_id uuid default uuid_generate_v1(), 
     shownumber text, 
@@ -46,17 +36,9 @@ CREATE TABLE gameboards(
     round text, 
     rating int, 
     questions text [][],
-    primary key (gboard_id) 
+    primary key (gboard_id)    
 ); 
 
-CREATE TABLE leaderboard(
-    rank int,
-    wlratio int,
-    constraint fk_users
-        foreign key (user_id)
-            references users (user_id)
-        
-); 
 
 
 
