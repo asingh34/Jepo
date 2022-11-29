@@ -1,3 +1,5 @@
+const { response } = require('express')
+
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'anantsingh',
@@ -17,7 +19,7 @@ const getCats = (request, response) => {//list 5 categories with cardinality
 }
 
 const getUsers = (request, response) => {//get all users
-  pool.query('SELECT * FROM users ORDER BY userid ASC', (error, results) => {
+  pool.query('SELECT * FROM users ORDER BY usr_id ASC', (error, results) => {
     if (error) {
       throw error
     }
@@ -27,7 +29,7 @@ const getUsers = (request, response) => {//get all users
 const getUserById = (request, response) => {//get single user by ID
   const id = parseInt(request.params.id)
 
-  pool.query('SELECT * FROM users WHERE userid = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM users WHERE usr_id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
@@ -78,6 +80,15 @@ const getLb = (request,response) => {//get the global leaderboard
   })
 }
 
+const getRandom = (request,response) => {//get a random question from the whole table
+  pool.query('select * from questions order by random() limit 1', (error,results) => {
+    if(error){
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+
+}
 /*const updateLb = (request,response)=>{//update the leaderboard
   
 }*/
@@ -103,6 +114,8 @@ deleteUser,
 
 getLb,
 getTopten,
+
+getRandom
 
 
 }
