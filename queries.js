@@ -16,8 +16,26 @@ const getCats = (request, response) => {//list 5 categories with cardinality
             }
         response.status(200).json(results.rows)
     })
+  }
+const getRandom = (request,response) => {//get a random question from the whole table
+  pool.query('select * from questions order by random() limit 1', (error,results) => {
+    if(error){
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
 }
 
+const createUser = (request, response) => {//create new user
+  const { name, email } = request.body
+
+  pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`User added with ID: ${results.rows[0].userid}`)
+  })
+}
 const getUsers = (request, response) => {//get all users
   pool.query('SELECT * FROM users ORDER BY usr_id ASC', (error, results) => {
     if (error) {
@@ -34,16 +52,6 @@ const getUserById = (request, response) => {//get single user by ID
       throw error
     }
     response.status(200).json(results.rows)
-  })
-}
-const createUser = (request, response) => {//create new user
-  const { name, email } = request.body
-
-  pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(201).send(`User added with ID: ${results.rows[0].userid}`)
   })
 }
 const updateUser = (request, response) => {//update existing user
@@ -80,15 +88,7 @@ const getLb = (request,response) => {//get the global leaderboard
   })
 }
 
-const getRandom = (request,response) => {//get a random question from the whole table
-  pool.query('select * from questions order by random() limit 1', (error,results) => {
-    if(error){
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
 
-}
 /*const updateLb = (request,response)=>{//update the leaderboard
   
 }*/
@@ -105,17 +105,17 @@ const getTopten = (request,response) => {//get the top ten of the leaderboard
 
 module.exports = {
 getCats,
+getRandom,
 
+
+createUser,
 getUsers,
 getUserById,
-createUser,
 updateUser,
 deleteUser,
 
 getLb,
-getTopten,
-
-getRandom
+getTopten
 
 
 }
