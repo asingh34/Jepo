@@ -33,36 +33,37 @@ describe("Gets categories",  async function() {
       const cats = await res.json()
       expect(cats.length).to.equal(len);
     });
-
-
 });
 
-describe("One question",  async function() {
 
-  var url = "http://localhost:3000/getRandom";
+describe("One random question",  async function() {
 
-  it("returns status 200", async function() {
+  var conf = testConfig.cats.getRandom
+  var url = conf.url
+  var len = conf.len
+
+  it(`returns status ${successCode}`, async function() {
     const res = await fetch (url)
-    expect(res.status).to.equal(200);
+    expect(res.status).to.equal(successCode);
   });
 
-  it("returns 1 question", async function() {
+  it(`returns ${len} random question`, async function() {
     const res = await fetch (url)
     const rando = await res.json()
-    expect(rando.length).to.equal(1);
+    expect(rando.length).to.equal(len);
   });
-
 });
+
 describe("Get Users", async function(){
-    var conf = testConfig.users.getUsers
-    var url = conf.url
-//    console.log('get users url: ', url)
-  it("returns status 200", async function(){
+  var conf = testConfig.users.getUsers
+  var url = conf.url
+//console.log('get users url: ', url)
+  it(`returns status ${successCode}`, async function(){
     const res = await fetch (url)
-    expect(res.status).to.equal(200);
+    expect(res.status).to.equal(successCode);
   });
 
-  it("returns all users",async function(){
+  it("returns all users", async function(){
     const res = await fetch (url)
     const usrs = await res.json()
     expect(usrs.length > 0); // eventually the exact length  will be passed in thru config from the test data set. Until then we merely check for greater than zero
@@ -80,7 +81,7 @@ describe("getUserById",async function(){
     var url = conf.url
 
      console.log('get user by id url: ', url)
-      it("returns status 200", async function(){
+      it(`returns status ${successCode}`, async function(){
         const testUrl = url + '?' + new URLSearchParams({
               id: testUserId,
             foo: 'xxx',
@@ -88,7 +89,7 @@ describe("getUserById",async function(){
         }).toString()
         console.log('get user by id testurl: ', testUrl)
         const res = await fetch (testUrl)
-        expect(res.status).to.equal(200);
+        expect(res.status).to.equal(successCode);
       });
 
       it("returns user selected by ID", async function(){
@@ -101,13 +102,23 @@ describe("getUserById",async function(){
         const res = await (
           await fetch (testUrl)
         ).json()
-        expect(res.length).to.equal(1);
+        expect(res.length).to.equal(len);
           /*
         if (res.length == 1) { 
             expect(res[0].id).to.equal(testUserId);
         }
           */
       });
+});
+
+describe ("Create User", async function(){
+  var conf = testConfig.users.createUser
+  var url = conf.url
+
+  it(`returns status ${successCode}`, async function(){
+    const res = await fetch (url)
+    expect(res.status).to.equal(successCode);
+  });
 });
 
 

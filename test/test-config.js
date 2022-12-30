@@ -27,6 +27,11 @@ const testConfig = {
         },
         getUserById: {
             url: baseUrl() + '/getUserById',
+        }, 
+        createUser: {
+            url: baseUrl() + '/createUser',
+            testUser: 'createTestUser2',
+            testUserEmail: 'createTest@user.com'
         }
     }
 }
