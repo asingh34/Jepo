@@ -5,15 +5,19 @@ const successCode = testConfig.successCode
 
 var assert = require('assert');
 
+// we store the first user's id here
+// it can then be used to (for example) to test getUserById if not null
+var testUserId = null;
+
 //test/server.js
 
 var expect  = require("chai").expect;
 
-describe(`${successCode} Status`, function(){
+describe(`${successCode} Status`, async function(){
 
 });
 
-describe("Gets categories",  function() {
+describe("Gets categories",  async function() {
 
     var conf = testConfig.cats.getCats
     var url = conf.url
@@ -33,7 +37,7 @@ describe("Gets categories",  function() {
 
 });
 
-describe("One question",  function() {
+describe("One question",  async function() {
 
   var url = "http://localhost:3000/getRandom";
 
@@ -49,9 +53,10 @@ describe("One question",  function() {
   });
 
 });
-describe("Get Users", function(){
-  var url = "http://localhost:3000/getUsers"
-
+describe("Get Users", async function(){
+    var conf = testConfig.users.getUsers
+    var url = conf.url
+//    console.log('get users url: ', url)
   it("returns status 200", async function(){
     const res = await fetch (url)
     expect(res.status).to.equal(200);
@@ -60,24 +65,49 @@ describe("Get Users", function(){
   it("returns all users",async function(){
     const res = await fetch (url)
     const usrs = await res.json()
-    expect(usrs.length).to.equal(0);//how to check dynamically
+    expect(usrs.length > 0); // eventually the exact length  will be passed in thru config from the test data set. Until then we merely check for greater than zero
+      console.log(usrs)
+    if (usrs.length > 0) {
+        let idx = conf.pickIndexFn(usrs)
+        testUserId = usrs[idx].id
+            console.log('testUserId: ', testUserId)
+        }
   });
 });
 
-describe("getUserByID",function(){
-  var url = "http://localhost:3000/getUserByID"
+describe("getUserById",async function(){
+    var conf = testConfig.users.getUserById
+    var url = conf.url
 
-  it("returns status 200", async function(){
-    const res = await fetch (url)
-    expect(res.status).to.equal(200);
-  });
+     console.log('get user by id url: ', url)
+      it("returns status 200", async function(){
+        const testUrl = url + '?' + new URLSearchParams({
+              id: testUserId,
+            foo: 'xxx',
+            bar: 'yyy'
+        }).toString()
+        console.log('get user by id testurl: ', testUrl)
+        const res = await fetch (testUrl)
+        expect(res.status).to.equal(200);
+      });
 
-  it("returns user selected by ID", async function(){
-    const res = await fetch (url)
-    const usr = await res.json()
-    expect(usr.length).to.equal(1);
-  });
+      it("returns user selected by ID", async function(){
+          const testUrl = url + '?' + new URLSearchParams({
+              id: testUserId,
+          }).toString()
+
+        // to get the returned data, we need to call .json() method upon response object as a second async call
+        // this is why we have two nested awaits
+        const res = await (
+          await fetch (testUrl)
+        ).json()
+        expect(res.length).to.equal(1);
+          /*
+        if (res.length == 1) { 
+            expect(res[0].id).to.equal(testUserId);
+        }
+          */
+      });
 });
-
 
 

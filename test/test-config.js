@@ -13,8 +13,22 @@ const testConfig = {
             url: baseUrl() + '/getCats',
             len: 5
         }
+    },
+    users: {
+        getUsers: {
+            url: baseUrl() + '/getUsers',
+            pickIndexFn: function (res) {
+                let result = 0
+                if (res.length > 2) {
+                    result = res.length / 2
+                }
+                return result
+            }
+        },
+        getUserById: {
+            url: baseUrl() + '/getUserById',
+        }
     }
-    
 }
 
 function baseUrl () {

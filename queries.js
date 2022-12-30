@@ -27,17 +27,17 @@ const getRandom = (request,response) => {//get a random question from the whole 
 }
 
 const createUser = (request, response) => {//create new user
-  const { name, email } = request.body
+  const { name, email } = request.query
 
   pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`User added with ID: ${results.rows[0].userid}`)
+    response.status(200).send(`User added with ID: ${results.rows[0].id}`)
   })
 }
 const getUsers = (request, response) => {//get all users
-  pool.query('SELECT * FROM users ORDER BY usr_id ASC', (error, results) => {
+  pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error
     }
@@ -45,9 +45,10 @@ const getUsers = (request, response) => {//get all users
   })
 }
 const getUserById = (request, response) => {//get single user by ID
-  const id = parseInt(request.params.id)
+    console.log ('getUserById params: ', request.query)
+  const id = request.query.id
 
-  pool.query('SELECT * FROM users WHERE usr_id = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
@@ -55,22 +56,22 @@ const getUserById = (request, response) => {//get single user by ID
   })
 }
 const updateUser = (request, response) => {//update existing user
-  const userid = parseInt(request.params.userid)
-  const { name, email } = request.body
+  const userid = request.query.id
+  const { name, email } = request.query
 
   pool.query(
     'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-    [name, email, userid],
+    [name, email, id],
     (error, results) => {
       if (error) {
         throw error
       }
-      response.status(200).send(`User modified with ID: ${userid}`)
+      response.status(200).send(`User modified with ID: ${id}`)
     }
   )
 }
 const deleteUser = (request, response) => {//delete user
-  const userid = parseInt(request.params.userid)
+  const userid = request.query.id
 
   pool.query('DELETE FROM users WHERE id = $1', [userid], (error, results) => {
     if (error) {
@@ -119,5 +120,3 @@ getTopten
 
 
 }
-
-
