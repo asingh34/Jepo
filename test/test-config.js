@@ -1,3 +1,5 @@
+const { getRandom } = require("../queries")
+
 const testUrlConfig = {
     scheme: 'http://',
     host: 'localhost',
@@ -12,26 +14,32 @@ const testConfig = {
         getCats: {
             url: baseUrl() + '/getCats',
             len: 5
+        },
+        
+        getRandom: {
+            url: baseUrl() + '/getRandom', 
+            len: 1
         }
     },
+
     users: {
         getUsers: {
             url: baseUrl() + '/getUsers',
             pickIndexFn: function (res) {
                 let result = 0
                 if (res.length > 2) {
-                    result = res.length / 2
+                    result = parseInt(res.length / 2)
                 }
                 return result
             }
         },
         getUserById: {
             url: baseUrl() + '/getUserById',
+            len: 1
         }, 
         createUser: {
             url: baseUrl() + '/createUser',
-            testUser: 'createTestUser2',
-            testUserEmail: 'createTest@user.com'
+            
         }
     }
 }

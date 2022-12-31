@@ -70,6 +70,7 @@ describe("Get Users", async function(){
       console.log(usrs)
     if (usrs.length > 0) {
         let idx = conf.pickIndexFn(usrs)
+        console.log('idx is:',idx)
         testUserId = usrs[idx].id
             console.log('testUserId: ', testUserId)
         }
@@ -79,13 +80,12 @@ describe("Get Users", async function(){
 describe("getUserById",async function(){
     var conf = testConfig.users.getUserById
     var url = conf.url
+    var len = conf.len
 
      console.log('get user by id url: ', url)
       it(`returns status ${successCode}`, async function(){
         const testUrl = url + '?' + new URLSearchParams({
               id: testUserId,
-            foo: 'xxx',
-            bar: 'yyy'
         }).toString()
         console.log('get user by id testurl: ', testUrl)
         const res = await fetch (testUrl)
@@ -118,6 +118,25 @@ describe ("Create User", async function(){
   it(`returns status ${successCode}`, async function(){
     const res = await fetch (url)
     expect(res.status).to.equal(successCode);
+  });
+
+  it("creates a user", async function(){
+    let userData = {
+      name: 'createTestUser2',
+      email: 'createTest@user.com', 
+      phone: '000-000-0000',
+      wins: 10, 
+      losses: 3,
+      rank: 1, 
+    };
+    const res = queries.createUser(userData)
+    expect(result).to.be.a('object');
+    expect(result).to.have.property('name', 'createTestUser2');
+    expect(result).to.have.property('email', 'createTest@user.com');
+    expect(result).to.have.property('phone', '000-000-0000');
+    expect(result).to.have.property('wins', 10);
+    expect(result).to.have.property('loses',3); 
+    expect(result).to.have.property('rank',1); 
   });
 });
 
