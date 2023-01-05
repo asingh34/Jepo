@@ -39,7 +39,7 @@ const testConfig = {
         }, 
         createUser: {
             url: baseUrl() + '/createUser',
-            
+            len: 1
         }
     }
 }

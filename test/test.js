@@ -4,14 +4,14 @@ const testConfig = require('./test-config.js').testConfig
 const successCode = testConfig.successCode
 
 var assert = require('assert');
-
-// we store the first user's id here
-// it can then be used to (for example) to test getUserById if not null
-var testUserId = null;
-
-//test/server.js
-
 var expect  = require("chai").expect;
+
+//testing variables 
+var testUserId = null;
+var testCreateName = null; 
+var testCreateEmail = null; 
+
+
 
 describe(`${successCode} Status`, async function(){
 
@@ -114,29 +114,27 @@ describe("getUserById",async function(){
 describe ("Create User", async function(){
   var conf = testConfig.users.createUser
   var url = conf.url
+  var len = conf.len
 
   it(`returns status ${successCode}`, async function(){
-    const res = await fetch (url)
+    const testUrl = url + new URLSearchParams({
+      name: testCreateName,
+      email: testCreateEmail
+    }).toString()
+    const res = await fetch (testUrl)
     expect(res.status).to.equal(successCode);
   });
 
   it("creates a user", async function(){
-    let userData = {
-      name: 'createTestUser2',
-      email: 'createTest@user.com', 
-      phone: '000-000-0000',
-      wins: 10, 
-      losses: 3,
-      rank: 1, 
-    };
-    const res = queries.createUser(userData)
-    expect(result).to.be.a('object');
-    expect(result).to.have.property('name', 'createTestUser2');
-    expect(result).to.have.property('email', 'createTest@user.com');
-    expect(result).to.have.property('phone', '000-000-0000');
-    expect(result).to.have.property('wins', 10);
-    expect(result).to.have.property('loses',3); 
-    expect(result).to.have.property('rank',1); 
+    const testUrl = url + '?' + new URLSearchParams({
+      testCreateName: 'createTestUser2',
+      testCreateEmail: 'createTest@user.com'
+    }).toString()
+
+    const res = await(
+      await fetch (testUrl)
+    )
+    expect(res.length).to.equal(len);
   });
 });
 

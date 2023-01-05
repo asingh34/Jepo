@@ -26,12 +26,8 @@ const getRandom = (request,response) => {//get a random question from the whole 
   })
 }
 
-
-
-
-
 const createUser = (request, response) => {//create new user
-  const { name, email } = request.query
+  const { name = '', email = '' } = request.query || {}
 
   pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email], (error, results) => {
     if (error) {
@@ -40,8 +36,6 @@ const createUser = (request, response) => {//create new user
     response.status(200).send(`User added with ID: ${results.rows[0].id}`)
   })
 }
-
-
 
 
 const getUsers = (request, response) => {//get all users
