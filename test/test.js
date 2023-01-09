@@ -54,6 +54,25 @@ describe("One random question",  async function() {
   });
 });
 
+describe ("Create User", async function(){
+  var conf = testConfig.users.createUser
+  var url = conf.url
+  var len = conf.len
+
+  it("creates a user", async function(){
+    const testUrl = url + '?' + new URLSearchParams({
+      name: 'createTestUser2',
+      email: 'createTest@user.com'
+    }).toString()
+
+    const res = await(
+      await fetch (testUrl)
+    ).json()
+      console.log('create User res: ', res)
+    expect(res.length).to.equal(len);
+  });
+});
+
 describe("Get Users", async function(){
   var conf = testConfig.users.getUsers
   var url = conf.url
@@ -109,33 +128,6 @@ describe("getUserById",async function(){
         }
           */
       });
-});
-
-describe ("Create User", async function(){
-  var conf = testConfig.users.createUser
-  var url = conf.url
-  var len = conf.len
-
-  it(`returns status ${successCode}`, async function(){
-    const testUrl = url + new URLSearchParams({
-      name: testCreateName,
-      email: testCreateEmail
-    }).toString()
-    const res = await fetch (testUrl)
-    expect(res.status).to.equal(successCode);
-  });
-
-  it("creates a user", async function(){
-    const testUrl = url + '?' + new URLSearchParams({
-      testCreateName: 'createTestUser2',
-      testCreateEmail: 'createTest@user.com'
-    }).toString()
-
-    const res = await(
-      await fetch (testUrl)
-    )
-    expect(res.length).to.equal(len);
-  });
 });
 
 
