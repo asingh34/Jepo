@@ -1,4 +1,7 @@
 const { getRandom } = require("../queries")
+const path = require('path')
+const fs = require('fs')
+
 
 const testUrlConfig = {
     scheme: 'http://',
@@ -7,8 +10,16 @@ const testUrlConfig = {
     successCode: 200,
 }
 
+const inputConfig = {
+    path: './test/data/testUsers.json'
+}
+
+
 const testConfig = {
     baseUrl: baseUrl,
+    getInputPath: getInputPath, 
+    readJsonFile: readJsonFile, 
+
     successCode: testUrlConfig.successCode,
     cats: {
         getCats: {
@@ -46,6 +57,18 @@ const testConfig = {
 
 function baseUrl () {
     return testUrlConfig.scheme + testUrlConfig.host + ':' + testUrlConfig.port
+}
+function getInputPath(filename){
+    console.log('getInputPath:',filename)
+    let result = path.join(inputConfig.path, filename)
+    console.log('getInputPath returns: ',result)
+    return result
+}
+
+function readJsonFile(path){
+    const jsonStr = fs.readFileSync(path)
+    const data = JSON.parse(jsonStr)
+    return data
 }
 
 module.exports = {

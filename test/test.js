@@ -8,8 +8,8 @@ var expect  = require("chai").expect;
 
 //testing variables 
 var testUserId = null;
-var testCreateName = null; 
-var testCreateEmail = null; 
+//var testCreateName = null; 
+//var testCreateEmail = null; 
 
 
 
@@ -54,23 +54,26 @@ describe("One random question",  async function() {
   });
 });
 
-describe ("Create User", async function(){
-  var conf = testConfig.users.createUser
-  var url = conf.url
-  var len = conf.len
+describe ("Create Users", async function(){
+  let conf = testConfig.users.createUser
 
-  it("creates a user", async function(){
-    const testUrl = url + '?' + new URLSearchParams({
-      name: 'createTestUser2',
-      email: 'createTest@user.com'
-    }).toString()
+ let url = conf.url
+ let inputFile = testConfig.users.createUser.inputFile
+ let inputPath = testConfig.getInputPath(inputFile)
+ let data = testConfig.readJsonFile(inputPath)
+ data.forEach( function(user) {
+   it(`creates user ${user.name} from input file`, async function(){
+     const testUrl = url + '?' + new URLSearchParams({
+       name: user.name,
+       email: user.email
+     }).toString()
 
-    const res = await(
-      await fetch (testUrl)
-    ).json()
-      console.log('create User res: ', res)
-    expect(res.length).to.equal(len);
-  });
+     const res = await(
+       await fetch (testUrl)
+     ).json()
+     expect(res.length).to.equal(1)
+   });
+ })
 });
 
 describe("Get Users", async function(){
