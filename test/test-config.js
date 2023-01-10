@@ -11,7 +11,7 @@ const testUrlConfig = {
 }
 
 const inputConfig = {
-    path: './test/data/testUsers.json'
+    path: './test/data/'
 }
 
 
@@ -49,6 +49,7 @@ const testConfig = {
             len: 1
         }, 
         createUser: {
+            inputFile: 'testUsers.json',
             url: baseUrl() + '/createUser',
             len: 1
         }
