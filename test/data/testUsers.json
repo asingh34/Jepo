@@ -1,0 +1,18 @@
+[
+    {
+    "name" : "TestUser1",
+    "email" : "Testuser1@jep.com",
+    "phone" : "123-456-7890",
+    "wins" : 20,
+    "losses" : 17,
+    "rank" : 45 
+    }, 
+    {
+    "name" : "TestUser2",
+    "email" : "Testuser2@jep.com",
+    "phone" : "098-765-4321",
+    "wins" : 30,
+    "losses" : 20,
+    "rank" : 46
+    }
+]
