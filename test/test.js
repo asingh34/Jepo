@@ -10,6 +10,8 @@ var expect  = require("chai").expect;
 var testUserId = null;
 //var testCreateName = null; 
 //var testCreateEmail = null; 
+var testIdarr = [];  
+
 
 
 
@@ -72,6 +74,7 @@ describe ("Create Users", async function(){
        await fetch (testUrl)
      ).json()
      expect(res.length).to.equal(1)
+     
    });
  })
 });
@@ -131,6 +134,12 @@ describe("getUserById",async function(){
         }
           */
       });
+});
+
+//START ON TEST CONFIG FIRST. 
+describe("Delte user by id ", async function(){
+  let conf = testConfig.users.delet
+
 });
 
 

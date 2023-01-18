@@ -53,6 +53,7 @@ const testConfig = {
             url: baseUrl() + '/createUser',
             len: 1
         }
+        //ADD DELET USER CONFIG HERE 
     }
 }
 
