@@ -27,7 +27,9 @@ app.get('/', (request, response) => {
 
 app.get('/getCats',db.getCats)//get categories + cardinality
 
-app.get('/getRandom',db.getRandom)//get one random question 
+app.get('/getRandom',db.getRandom)//get one random question with all data
+
+app.get('/getRandomQuestion',db.getRandomQuestion)// get one random question 
 
 app.get('/getUsers',db.getUsers)//gets all users
 app.get('/getUserById',db.getUserById)//gets user by id

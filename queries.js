@@ -17,7 +17,7 @@ const getCats = (request, response) => {//list 5 categories with cardinality
         response.status(200).json(results.rows)
     })
   }
-const getRandom = (request,response) => {//get a random question from the whole table
+const getRandom = (request,response) => {//get a random question from the whole table with all attributes listed
   pool.query('select * from questions order by random() limit 1', (error,results) => {
     if(error){
       throw error
@@ -25,6 +25,16 @@ const getRandom = (request,response) => {//get a random question from the whole 
     response.status(200).json(results.rows)
   })
 }
+
+const getRandomQuestion = (request, response) => {//get a random question from the whole table with no other attributes listed
+  pool.query('select question from questions order by random() limit 1', (error,results) => {
+    if(error){
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+  
 
 const createUser = (request, response) => {//create new user
     console.log ('createUser params: ', request.query)
@@ -74,15 +84,32 @@ const updateUser = (request, response) => {//update existing user
   )
 }
 const deleteUser = (request, response) => {//delete user
-  const userid = request.query.id
+    console.log ('deleteUser params: ', request.query)
+  const userId = request.query.id
+  const userName = request.query.name
+  let stmt = "DELETE FROM users WHERE"
+  let param = null
 
-  pool.query('DELETE FROM users WHERE id = $1', [userid], (error, results) => {
+  if (userId != null) {
+      stmt += " id = $1 returning *"
+      param = userId
+  }
+  else if (userName != null) { 
+      stmt += " name = $1 returning *"
+      param = userName
+  }
+  else {
+      throw "deleteUser needs either a specific id or a name"
+  }
+
+  pool.query(stmt, [param], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(200).send(`User deleted with ID: ${userid}`)
+    response.status(200).json(results.rows)
   })
 }
+
 const getLb = (request,response) => {//get the global leaderboard
   pool.query('SELECT * FROM leaderboard ORDER BY rank ASC',(error, results) => {
     if (error) {
@@ -110,6 +137,7 @@ const getTopten = (request,response) => {//get the top ten of the leaderboard
 module.exports = {
 getCats,
 getRandom,
+getRandomQuestion,
 
 
 createUser,

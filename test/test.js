@@ -13,8 +13,6 @@ var testUserId = null;
 var testIdarr = [];  
 
 
-
-
 describe(`${successCode} Status`, async function(){
 
 });
@@ -38,9 +36,27 @@ describe("Gets categories",  async function() {
 });
 
 
-describe("One random question",  async function() {
+describe("One random question with data",  async function() {//this includes all data for the question
 
   var conf = testConfig.cats.getRandom
+  var url = conf.url
+  var len = conf.len
+
+  it(`returns status ${successCode}`, async function() {
+    const res = await fetch (url)
+    expect(res.status).to.equal(successCode);
+  });
+
+  it(`returns ${len} random question with data`, async function() {
+    const res = await fetch (url)
+    const rando = await res.json()
+    expect(rando.length).to.equal(len);
+  });
+});
+
+describe("One random question",  async function() {//this is for just one question no other data
+
+  var conf = testConfig.question.getRandomQuestion
   var url = conf.url
   var len = conf.len
 
@@ -55,6 +71,9 @@ describe("One random question",  async function() {
     expect(rando.length).to.equal(len);
   });
 });
+
+
+
 
 describe ("Create Users", async function(){
   let conf = testConfig.users.createUser
@@ -136,10 +155,28 @@ describe("getUserById",async function(){
       });
 });
 
-//START ON TEST CONFIG FIRST. 
-describe("Delte user by id ", async function(){
-  let conf = testConfig.users.delet
+describe("Delete user by id ", async function(){
+    let conf = testConfig.users.deleteCreatedUsers
+    let url = conf.url
+
+    // use the same users dataset as that by createUsers
+    let inputFile = testConfig.users.createUser.inputFile
+    let inputPath = testConfig.getInputPath(inputFile)
+    let data = testConfig.readJsonFile(inputPath)
+    data.forEach( function(user) {
+        it(`deletes user ${user.name} from the database`, async function(){
+         const testUrl = url + '?' + new URLSearchParams({
+           name: user.name,
+         }).toString()
+
+         const res = await(
+           await fetch (testUrl)
+         ).json()
+         expect(res.length).to.equal(1)
+         
+        });
+    })
+
 
 });
-
 
